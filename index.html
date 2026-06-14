@@ -28,7 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Grid bg */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -47,7 +46,7 @@ body::after {
 
 section, footer, nav { position: relative; z-index: 1; }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; width: 100%; z-index: 50;
   padding: 1rem 1.5rem;
@@ -56,42 +55,32 @@ nav {
   background: rgba(5,14,26,0.8);
   backdrop-filter: blur(16px);
 }
-
 .logo {
-  font-family: 'Space Mono', monospace;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  display: flex; align-items: center; gap: 0.4rem;
+  font-family: 'Space Mono', monospace; font-size: 1.05rem;
+  letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.4rem;
 }
 .logo .br { color: var(--cyan); opacity: 0.45; }
 .logo .accent { color: var(--cyan); }
-
 .menu-btn {
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 0.4rem;
-  color: var(--dim);
-  padding: 0.35rem 0.65rem;
-  cursor: pointer; font-size: 1rem;
+  background: none; border: 1px solid var(--border); border-radius: 0.4rem;
+  color: var(--dim); padding: 0.35rem 0.65rem; cursor: pointer; font-size: 1rem;
   transition: border-color 0.2s, color 0.2s;
 }
 .menu-btn:hover { border-color: var(--cyan); color: var(--cyan); }
 
-/* ── MOBILE MENU ── */
+/* MOBILE */
 #mobile-overlay {
   display: none; position: fixed; inset: 0; z-index: 100;
   background: rgba(5,14,26,0.97);
   flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
 }
 #mobile-overlay.open { display: flex; }
-
 .mobile-close {
   position: absolute; top: 1.4rem; right: 1.5rem;
   background: none; border: none; color: var(--dim);
   font-size: 1.6rem; cursor: pointer; transition: color 0.2s;
 }
 .mobile-close:hover { color: var(--cyan); }
-
 #mobile-overlay a {
   font-family: 'Space Mono', monospace; font-size: 1.6rem;
   color: var(--text); text-decoration: none; letter-spacing: 0.06em;
@@ -99,21 +88,17 @@ nav {
 }
 #mobile-overlay a:hover { color: var(--cyan); }
 
-/* ── HERO ── */
+/* HERO */
 #hero {
-  min-height: 100svh;
-  padding: 8rem 1.5rem 4rem;
+  min-height: 100svh; padding: 8rem 1.5rem 4rem;
   display: flex; flex-direction: column; justify-content: center;
 }
-
 .badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  border: 1px solid rgba(0,212,255,0.22);
-  background: rgba(0,212,255,0.05);
+  border: 1px solid rgba(0,212,255,0.22); background: rgba(0,212,255,0.05);
   border-radius: 99px; padding: 0.3rem 0.85rem;
   font-family: 'Space Mono', monospace; font-size: 0.62rem;
-  color: var(--cyan); letter-spacing: 0.12em;
-  margin-bottom: 1.8rem;
+  color: var(--cyan); letter-spacing: 0.12em; margin-bottom: 1.8rem;
 }
 .badge-dot {
   width: 6px; height: 6px; border-radius: 50%; background: var(--cyan);
@@ -126,24 +111,17 @@ h1 {
   font-weight: 700; line-height: 1.08;
   letter-spacing: -0.025em; margin-bottom: 1.4rem;
 }
-
-.glitch {
-  position: relative; display: inline-block;
-  color: var(--cyan); font-style: italic;
-}
+.glitch { position: relative; display: inline-block; color: var(--cyan); font-style: italic; }
 .glitch::before, .glitch::after {
-  content: attr(data-text);
-  position: absolute; top:0; left:0; width:100%; height:100%;
-  font-style: italic;
+  content: attr(data-text); position: absolute; top:0; left:0;
+  width:100%; height:100%; font-style: italic;
 }
 .glitch::before {
-  color: var(--purple);
-  animation: g1 5s infinite;
+  color: var(--purple); animation: g1 5s infinite;
   clip-path: polygon(0 28%,100% 28%,100% 48%,0 48%);
 }
 .glitch::after {
-  color: var(--cyan);
-  animation: g2 5s infinite;
+  color: var(--cyan); animation: g2 5s infinite;
   clip-path: polygon(0 60%,100% 60%,100% 76%,0 76%);
 }
 @keyframes g1 {
@@ -158,94 +136,47 @@ h1 {
   93%{transform:translate(-2px,1px);opacity:0.55}
   95%{transform:translate(1px,-2px);opacity:0.65}
 }
-
 .hero-sub {
   color: var(--dim); font-size: 1rem; line-height: 1.72;
   max-width: 38ch; margin-bottom: 2.5rem;
 }
-
 .btn-primary {
-  display: block; width: 100%; padding: 1rem;
-  border-radius: 0.6rem;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-  text-align: center; text-decoration: none;
-  color: #050e1a; background: var(--cyan);
+  display: block; width: 100%; padding: 1rem; border-radius: 0.6rem;
+  font-family: 'Space Mono', monospace; font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.1em; text-align: center;
+  text-decoration: none; color: #050e1a; background: var(--cyan);
   box-shadow: 0 0 22px rgba(0,212,255,0.35);
-  transition: box-shadow 0.3s, transform 0.2s;
-  margin-bottom: 1rem;
+  transition: box-shadow 0.3s, transform 0.2s; margin-bottom: 1rem;
 }
 .btn-primary:hover { box-shadow: 0 0 38px rgba(0,212,255,0.55); transform: translateY(-2px); }
-
 .hero-note { text-align:center; font-size:0.8rem; color:var(--purple); font-style:italic; }
 
-/* ── STATS ── */
+/* STATS */
 #stats { padding: 1.5rem 1.5rem 3rem; display:flex; gap:1rem; justify-content:center; }
-
 .stat {
-  flex:1; max-width:110px;
-  background: var(--surface); border: 1px solid var(--border);
+  flex:1; max-width:110px; background: var(--surface); border: 1px solid var(--border);
   border-radius: 0.75rem; padding: 1rem 0.5rem; text-align:center;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .stat:hover { border-color:var(--cyan); box-shadow:0 0 18px rgba(0,212,255,0.14); }
 .stat.p { border-color: var(--border-p); }
 .stat.p:hover { border-color:var(--purple); box-shadow:0 0 18px rgba(147,51,234,0.14); }
-
-.stat-val {
-  font-family: 'Space Mono', monospace; font-size:1.1rem;
-  color:var(--cyan); margin-bottom:0.3rem;
-}
+.stat-val { font-family:'Space Mono',monospace; font-size:1.1rem; color:var(--cyan); margin-bottom:0.3rem; }
 .stat.p .stat-val { color: var(--purple); }
-
 .stat-label { font-size:0.58rem; letter-spacing:0.14em; color:var(--dim); text-transform:uppercase; }
 
-/* ── PARTNER SECTION ── */
-#partner { padding: 3.5rem 1.5rem; }
-
+/* SHARED SECTION HEADER */
 .section-eyebrow {
   font-family: 'Space Mono', monospace; font-size:0.62rem;
-  letter-spacing:0.18em; color:var(--cyan); text-transform:uppercase;
-  margin-bottom:0.5rem;
+  letter-spacing:0.18em; color:var(--cyan); text-transform:uppercase; margin-bottom:0.5rem;
 }
 .section-title {
-  font-size:1.8rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:1rem;
+  font-size:1.8rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:1.2rem;
 }
 
-.partner-body {
-  color:var(--dim); font-size:0.92rem; line-height:1.7; margin-bottom:1.5rem;
-}
-
-.pill-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem; }
-
-.pill {
-  font-family:'Space Mono', monospace; font-size:0.58rem; letter-spacing:0.1em;
-  background: rgba(0,212,255,0.06);
-  border: 1px solid rgba(0,212,255,0.2);
-  color: var(--cyan); border-radius:0.3rem; padding:0.28rem 0.65rem;
-  text-transform:uppercase;
-}
-
-.features { display:flex; flex-direction:column; gap:1.5rem; }
-
-.feature { display:flex; gap:1rem; align-items:flex-start; }
-
-.feat-icon {
-  flex-shrink:0; width:2.5rem; height:2.5rem;
-  border-radius:0.5rem; display:flex; align-items:center; justify-content:center;
-  font-size:0.95rem;
-}
-.feat-icon.c { background:rgba(0,212,255,0.08); color:var(--cyan); }
-.feat-icon.p { background:rgba(147,51,234,0.09); color:var(--purple); }
-
-.feat-title { font-size:0.95rem; font-weight:600; margin-bottom:0.25rem; }
-.feat-body { font-size:0.85rem; color:var(--dim); line-height:1.6; }
-
-/* ── EXPERTISE ── */
+/* EXPERTISE */
 #expertise { padding: 3.5rem 1.5rem; }
-
 .cards { display:flex; flex-direction:column; gap:1rem; }
-
 .card {
   background: var(--surface); border:1px solid var(--border);
   border-radius:1rem; padding:1.5rem;
@@ -254,7 +185,6 @@ h1 {
 .card:hover { border-color:var(--cyan); box-shadow:0 0 24px rgba(0,212,255,0.12); transform:translateY(-2px); }
 .card.p { border-color:var(--border-p); }
 .card.p:hover { border-color:var(--purple); box-shadow:0 0 24px rgba(147,51,234,0.14); }
-
 .card-icon {
   width:2.5rem; height:2.5rem; border-radius:0.5rem;
   display:flex; align-items:center; justify-content:center;
@@ -262,66 +192,75 @@ h1 {
   background:rgba(0,212,255,0.08); color:var(--cyan);
 }
 .card.p .card-icon { background:rgba(147,51,234,0.1); color:var(--purple); }
-
 .card h3 { font-size:1.1rem; font-weight:600; margin-bottom:0.5rem; letter-spacing:-0.01em; }
 .card p { font-size:0.88rem; color:var(--dim); line-height:1.65; margin-bottom:1rem; }
-
 .tags { display:flex; gap:0.4rem; flex-wrap:wrap; }
 .tag {
-  font-family:'Space Mono', monospace; font-size:0.58rem; letter-spacing:0.07em;
+  font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.07em;
   background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);
   border-radius:0.25rem; padding:0.2rem 0.5rem; color:var(--dim);
 }
 
-/* ── CONTACT ── */
+/* PARTNER */
+#partner { padding: 3.5rem 1.5rem; }
+.partner-body {
+  color:var(--dim); font-size:0.92rem; line-height:1.7; margin-bottom:1.5rem;
+}
+.pill-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem; }
+.pill {
+  font-family:'Space Mono',monospace; font-size:0.58rem; letter-spacing:0.1em;
+  background:rgba(0,212,255,0.06); border:1px solid rgba(0,212,255,0.2);
+  color:var(--cyan); border-radius:0.3rem; padding:0.28rem 0.65rem; text-transform:uppercase;
+}
+.features { display:flex; flex-direction:column; gap:1.5rem; }
+.feature { display:flex; gap:1rem; align-items:flex-start; }
+.feat-icon {
+  flex-shrink:0; width:2.5rem; height:2.5rem; border-radius:0.5rem;
+  display:flex; align-items:center; justify-content:center; font-size:0.95rem;
+}
+.feat-icon.c { background:rgba(0,212,255,0.08); color:var(--cyan); }
+.feat-icon.p { background:rgba(147,51,234,0.09); color:var(--purple); }
+.feat-title { font-size:0.95rem; font-weight:600; margin-bottom:0.25rem; }
+.feat-body { font-size:0.85rem; color:var(--dim); line-height:1.6; }
+
+/* CONTACT */
 #contact {
   padding: 3.5rem 1.5rem;
   background: linear-gradient(180deg, transparent 0%, rgba(0,212,255,0.025) 100%);
 }
-
 .contact-card {
-  background: var(--surface);
-  border: 1px solid rgba(0,212,255,0.18);
+  background: var(--surface); border:1px solid rgba(0,212,255,0.18);
   border-radius:1rem; padding:2rem 1.5rem; text-align:center;
   margin-bottom:1rem; position:relative; overflow:hidden;
 }
 .contact-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  background: linear-gradient(90deg,transparent,var(--cyan),transparent);
 }
-
 .rocket-icon {
   width:4rem; height:4rem; border-radius:50%;
   background:rgba(0,212,255,0.07); border:1px solid rgba(0,212,255,0.18);
   display:flex; align-items:center; justify-content:center;
   font-size:1.5rem; color:var(--cyan); margin:0 auto 1.2rem;
 }
-
 .contact-card h3 { font-size:1.3rem; font-weight:700; margin-bottom:0.5rem; }
-.contact-card p { font-size:0.85rem; color:var(--dim); margin-bottom:1.5rem; }
-
+.contact-card > p { font-size:0.85rem; color:var(--dim); margin-bottom:1.5rem; }
 .social-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-top:1rem; }
-
 .social-link {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:0.75rem; padding:1rem 0.75rem;
-  text-decoration:none; display:flex; flex-direction:column;
-  align-items:center; gap:0.4rem;
+  background:var(--surface); border:1px solid var(--border); border-radius:0.75rem;
+  padding:1rem 0.75rem; text-decoration:none;
+  display:flex; flex-direction:column; align-items:center; gap:0.4rem;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .social-link:hover { border-color:var(--cyan); box-shadow:0 0 14px rgba(0,212,255,0.12); }
 .social-link.ig:hover { border-color:var(--purple); box-shadow:0 0 14px rgba(147,51,234,0.12); }
-
 .social-link .si { font-size:1.2rem; color:var(--cyan); }
 .social-link.ig .si { color:var(--purple); }
 .s-label { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); }
 .s-handle { font-size:0.7rem; color:var(--text); text-align:center; word-break:break-all; }
 
-/* ── FOOTER ── */
-footer {
-  padding:2.5rem 1.5rem;
-  border-top:1px solid var(--border); text-align:center;
-}
+/* FOOTER */
+footer { padding:2.5rem 1.5rem; border-top:1px solid var(--border); text-align:center; }
 .footer-logo { font-family:'Space Mono',monospace; font-size:1rem; margin-bottom:1rem; }
 .footer-logo span { color:var(--cyan); }
 .footer-copy { font-family:'Space Mono',monospace; font-size:0.55rem; letter-spacing:0.13em; color:var(--dim); text-transform:uppercase; }
@@ -329,22 +268,16 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="logo">
-    <span class="br">[</span>TECH <span class="accent">EDITOR</span><span class="br">]</span>
-  </div>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+  <div class="logo"><span class="br">[</span>TECH <span class="accent">EDITOR</span><span class="br">]</span></div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
 </nav>
 
-<!-- MOBILE OVERLAY -->
 <div id="mobile-overlay">
   <button class="mobile-close" id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
   <a href="#">Home</a>
-  <a href="#partner">About Us</a>
   <a href="#expertise">Services</a>
+  <a href="#partner">About Us</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -364,43 +297,7 @@ footer {
   <div class="stat"><div class="stat-val">⚡ AI</div><div class="stat-label">Core</div></div>
 </div>
 
-<!-- CREATIVE PARTNER -->
-<section id="partner">
-  <p class="section-eyebrow">Why Us</p>
-  <h2 class="section-title">Your Creative Partner</h2>
-  <p class="partner-body">We bridge the gap between complex technology and human-centric design. Our workflow ensures high-quality delivery for modern brands.</p>
-  <div class="pill-row">
-    <span class="pill">React</span>
-    <span class="pill">AI Agents</span>
-    <span class="pill">Next.js</span>
-    <span class="pill">Strategy</span>
-  </div>
-  <div class="features">
-    <div class="feature">
-      <div class="feat-icon c"><i class="fa-solid fa-bolt"></i></div>
-      <div>
-        <div class="feat-title">Fast Turnaround</div>
-        <div class="feat-body">Optimized workflows for rapid delivery without quality compromise.</div>
-      </div>
-    </div>
-    <div class="feature">
-      <div class="feat-icon p"><i class="fa-solid fa-chess-knight"></i></div>
-      <div>
-        <div class="feat-title">Strategy First</div>
-        <div class="feat-body">Every pixel and word is designed with your end-goal in mind.</div>
-      </div>
-    </div>
-    <div class="feature">
-      <div class="feat-icon c"><i class="fa-solid fa-brain"></i></div>
-      <div>
-        <div class="feat-title">AI-Powered Edge</div>
-        <div class="feat-body">Leveraging generative tech to push creative boundaries.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERTISE -->
+<!-- EXPERTISE (comes first per source order) -->
 <section id="expertise">
   <p class="section-eyebrow">What We Do</p>
   <h2 class="section-title">Our Expertise</h2>
@@ -409,7 +306,7 @@ footer {
       <div class="card-icon"><i class="fa-solid fa-code"></i></div>
       <h3>Website Design &amp; Development</h3>
       <p>High-performance, responsive interfaces built with modern stacks like React and Tailwind for ultimate speed.</p>
-      <div class="tags"><span class="tag">REACT</span><span class="tag">WEB3</span><span class="tag">TAILWIND</span></div>
+      <div class="tags"><span class="tag">REACT</span><span class="tag">WEB3</span></div>
     </div>
     <div class="card p">
       <div class="card-icon"><i class="fa-brands fa-instagram"></i></div>
@@ -428,6 +325,33 @@ footer {
       <h3>Tech &amp; AI Content</h3>
       <p>Authority-building content focused on emerging tech, machine learning, and hardware innovations.</p>
       <div class="tags"><span class="tag">AI TOOLS</span><span class="tag">SEO</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER (comes after expertise per source order) -->
+<section id="partner">
+  <p class="section-eyebrow">Why Us</p>
+  <h2 class="section-title">Your Creative Partner</h2>
+  <p class="partner-body">We bridge the gap between complex technology and human-centric design. Our workflow ensures high-quality delivery for modern brands.</p>
+  <div class="pill-row">
+    <span class="pill">React</span>
+    <span class="pill">AI Agents</span>
+    <span class="pill">Next.js</span>
+    <span class="pill">Strategy</span>
+  </div>
+  <div class="features">
+    <div class="feature">
+      <div class="feat-icon c"><i class="fa-solid fa-bolt"></i></div>
+      <div><div class="feat-title">Fast Turnaround</div><div class="feat-body">Optimized workflows for rapid delivery without quality compromise.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feat-icon p"><i class="fa-solid fa-chess-knight"></i></div>
+      <div><div class="feat-title">Strategy First</div><div class="feat-body">Every pixel and word is designed with your end-goal in mind.</div></div>
+    </div>
+    <div class="feature">
+      <div class="feat-icon c"><i class="fa-solid fa-brain"></i></div>
+      <div><div class="feat-title">AI-Powered Edge</div><div class="feat-body">Leveraging generative tech to push creative boundaries.</div></div>
     </div>
   </div>
 </section>
@@ -458,7 +382,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">TECH <span>EDITOR</span></div>
   <div class="footer-copy">© 2024 Tech Editor. Decentralized Creative Studio.</div>
@@ -472,3 +395,4 @@ footer {
 </script>
 </body>
 </html>
+
